@@ -1,8 +1,13 @@
-import Hello from './hello'
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import GoogleAutoComplete from './GoogleAutoComplete'
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const root = document.getElementById('root')
+console.log("### root", root);
 
 ReactDOM.render(
-  <Hello name='react' onChange={name => console.log(name)}/>,
-  document.body
+  <GoogleAutoComplete onAutocompleteChange={(value) => {
+    console.log("### place", value)
+  }}/>,
+  document.getElementById('root')
 )

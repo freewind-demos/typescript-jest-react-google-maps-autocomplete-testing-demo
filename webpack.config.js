@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './src/entry.tsx',
-  devtool: "inline-source-map",
+  devtool: "eval-source-map",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -20,6 +20,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "./index.html"
+    })
   ]
 }
